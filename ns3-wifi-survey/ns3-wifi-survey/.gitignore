@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+
+# Log và file tạm khi chạy
+*.log
+nohup.out
+resources.txt
+
+# Metadata Windows sinh ra khi kéo file vào WSL
+*:Zone.Identifier
+
+# Hệ điều hành / trình soạn thảo
+.DS_Store
+Thumbs.db
+.vscode/

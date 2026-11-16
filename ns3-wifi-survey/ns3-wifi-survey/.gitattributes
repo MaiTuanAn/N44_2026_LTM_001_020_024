@@ -1,0 +1,6 @@
+# Ép dùng LF để script chạy được trên WSL/Linux dù soạn trên Windows
+*.sh   text eol=lf
+*.py   text eol=lf
+*.cc   text eol=lf
+*.md   text eol=lf
+*.png  binary
