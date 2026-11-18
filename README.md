@@ -17,17 +17,20 @@ Sau đó tự động tổng hợp kết quả thành bảng số liệu và đ�
 ## 1. Cấu trúc thư mục
 
 ```
-ns3-wifi-survey/
-├── README.md               # Tài liệu này
-├── wifi-survey.cc          # Chương trình mô phỏng ns-3 (C++), file chính
-├── run_experiments.sh      # Chạy tự động 56 lượt mô phỏng, ghi results.csv
-├── plot_results.py         # Vẽ 4 đồ thị từ results.csv  -> figures/
-├── make_tables.py          # In/lưu các bảng số liệu từ results.csv -> tables/
-├── measure_resources.sh    # Đo thời gian chạy và RAM (cho phần đánh giá tài nguyên)
-├── install_to_ns3.sh       # Chép các file trên vào đúng chỗ trong thư mục ns-3
-├── figures/                # Đồ thị mẫu đã vẽ sẵn (4 ảnh PNG)
-├── .gitignore
-└── .gitattributes
+(thư mục gốc repo)
+├── README.md                          # Tài liệu này
+├── Bao_Cao_Khao_Sat_WiFi_ns3.docx     # Báo cáo đồ án
+├── .gitignore, .gitattributes         # Cấu hình Git (phải nằm ở thư mục gốc)
+├── figures/                           # 4 đồ thị mẫu đã vẽ sẵn (PNG)
+├── results/
+│   └── results.csv                    # Dữ liệu gốc của 56 lượt mô phỏng
+└── ns3-wifi-survey/                   # Toàn bộ mã nguồn
+    ├── wifi-survey.cc                 # Chương trình mô phỏng ns-3 (C++), file chính
+    ├── run_experiments.sh             # Chạy tự động 56 lượt mô phỏng, ghi results.csv
+    ├── plot_results.py                # Vẽ 4 đồ thị từ results.csv  -> figures/
+    ├── make_tables.py                 # In/lưu các bảng số liệu từ results.csv -> tables/
+    ├── measure_resources.sh           # Đo thời gian chạy và RAM
+    └── install_to_ns3.sh              # Chép các file code vào đúng chỗ trong thư mục ns-3
 ```
 
 Sau khi chạy, sẽ xuất hiện thêm (trong thư mục ns-3): `results.csv`, `figures/`, `tables/`, `run.log`.
@@ -159,7 +162,7 @@ Luôn làm việc trong thư mục home của Ubuntu (`~`), **đừng** để tr
 ```bash
 mkdir -p ~/ns3-project && cd ~/ns3-project
 git clone https://gitlab.com/nsnam/ns-3-dev.git
-git clone https://github.com/<tên-tài-khoản>/<tên-repo>.git ns3-wifi-survey
+git clone https://github.com/<tên-tài-khoản>/<tên-repo>.git
 ```
 
 (Thay `<tên-tài-khoản>/<tên-repo>` bằng địa chỉ repo GitHub của dự án này.)
@@ -184,7 +187,7 @@ Nếu lỡ đóng terminal giữa chừng, chỉ cần chạy lại `./ns3 build
 ### 3.6. Chép code của dự án vào ns-3
 
 ```bash
-cd ~/ns3-project/ns3-wifi-survey
+cd ~/ns3-project/<tên-repo>/ns3-wifi-survey
 bash install_to_ns3.sh ~/ns3-project/ns-3-dev
 ```
 
@@ -322,7 +325,7 @@ Nhận xét tóm tắt từ số liệu đo được:
 
 </details>
 
-File `results.csv` gốc của lần chạy này nên được thêm vào repo (thư mục `results/`) để người khác đối chiếu.
+Dữ liệu gốc của lần chạy này nằm ở `results/results.csv` để người khác đối chiếu.
 
 ---
 
@@ -354,6 +357,17 @@ File `results.csv` gốc của lần chạy này nên được thêm vào repo (
 
 ---
 
-## 7. Giấy phép và tác giả
+## 7. Tác giả và giấy phép
 
-Thêm thông tin tác giả và giấy phép (ví dụ MIT) vào phần này trước khi công khai repo.
+Đồ án cuối kì học phần **Lập trình mạng** (lớp học phần 23NH44), Khoa Điện tử và Trí tuệ nhân tạo,
+Trường Đại học Bách khoa, Đà Nẵng, năm 2026.
+Giảng viên hướng dẫn: **TS. Nguyễn Văn Hiếu**.
+
+| Thành viên | MSSV | Phụ trách chính |
+|---|---|---|
+| Mai Tuấn An | 106230001 | Thiết kế kiến trúc, mô hình kênh truyền, lập trình kịch bản mô phỏng ns-3, đưa mã nguồn lên GitHub (40%) |
+| Nguyễn Bá Minh Nhật | 106230020 | Chạy thí nghiệm, trích xuất dữ liệu FlowMonitor, vẽ đồ thị, lập bảng số liệu (30%) |
+| Ông Hoàn Quốc | 106230024 | Phân tích hiệu năng, viết và hiệu đính báo cáo, soạn tài liệu và slide thuyết trình (30%) |
+
+Giấy phép: chưa chỉ định. Nếu muốn cho phép người khác tái sử dụng mã nguồn, hãy thêm file `LICENSE`
+(ví dụ giấy phép MIT) vào thư mục gốc của repo.
