@@ -18,9 +18,9 @@ Sau đó tự động tổng hợp kết quả thành bảng số liệu và đ�
 
 ```
 (thư mục gốc repo)
-├── README.md                          # Tài liệu này
+├── README.md                          # Tài liệu 
 ├── Bao_Cao_Khao_Sat_WiFi_ns3.docx     # Báo cáo đồ án
-├── .gitignore, .gitattributes         # Cấu hình Git (phải nằm ở thư mục gốc)
+├── .gitignore, .gitattributes         # Cấu hình Git 
 ├── figures/                           # 4 đồ thị mẫu đã vẽ sẵn (PNG)
 ├── results/
 │   └── results.csv                    # Dữ liệu gốc của 56 lượt mô phỏng
@@ -33,7 +33,7 @@ Sau đó tự động tổng hợp kết quả thành bảng số liệu và đ�
     └── install_to_ns3.sh              # Chép các file code vào đúng chỗ trong thư mục ns-3
 ```
 
-Sau khi chạy, sẽ xuất hiện thêm (trong thư mục ns-3): `results.csv`, `figures/`, `tables/`, `run.log`.
+
 
 ---
 
